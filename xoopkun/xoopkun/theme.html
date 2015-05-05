@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body>
+
+<div align=center style="text-align:center;">
+<!-- ヘッダ部分の定義 -->
+<table cellspacing="0" width=780 style="width:780px;">
+<tr id="header">
+<td id="header1"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>logo.gif"></a>
+<img src="<{$xoops_imageurl}>title.gif">
+</td>
+<td id="header2" rowspan=3><img src="<{$xoops_imageurl}>side.gif"></td>
+</tr>
+
+<tr>
+<td id="header3">
+	<a href="<{$xoops_url}>/" class=menu_link>ホーム</a>
+	<a href="<{$xoops_url}>/modules/news/" class=menu_link>サイトニュース</a>
+	<a href="<{$xoops_url}>/modules/phorum/" class=menu_link>フォーラム</a>
+	<a href="<{$xoops_url}>/modules/newbb/" class=menu_link>オンライン学習室</a>
+	<a href="<{$xoops_url}>/modules/xcgal/" class=menu_link>テーマ配布</a>
+	<a href="<{$xoops_url}>/modules/linkster/" class=menu_link>特選リンク集</a>
+</td>
+</tr>
+<tr>
+<td id="header4">&nbsp;</td>
+</tr>
+</table>
+<!-- ヘッダ部分終わり -->
+
+<table cellspacing="0" width=780 style="width:780px;border:1px solid #F3C792;">
+    <tr>
+	<!-- 左ブロック部分の定義 -->
+      <td id="leftcolumn">
+        <{foreach item=block from=$xoops_lblocks}>
+		<div class="blockTitle"><{$block.title}></div>
+		<div class="blockContent"><{$block.content}></div>
+        <{/foreach}>
+      </td>
+    <!-- 左ブロック終わり -->
+
+      <td id="centercolumn">
+
+        <!-- Display center blocks if any -->
+        <{if $xoops_showcblock == 1}>
+
+        <table cellspacing="0">
+          <tr>
+          <!-- 中央-中央ブロック部分の定義 -->
+            <td id="centerCcolumn" colspan="2">
+            <{foreach item=block from=$xoops_ccblocks}>
+			<div style="padding: 5px;">
+			<div class="blockTitle"><{$block.title}></div>
+			<div class="blockContent"><{$block.content}></div>
+			</div>
+            <{/foreach}>
+            </td>
+          <!-- 中央-中央ブロック部分終わり -->
+          </tr>
+          <tr>
+
+          <!-- 中央-左ブロック部分の定義 -->
+            <td id="centerLcolumn">
+            <{foreach item=block from=$xoops_clblocks}>
+				<div style="padding: 0px 0px 0px 8px;">
+				<div class="blockTitle"><{$block.title}></div>
+				<div class="blockContent"><{$block.content}></div>
+				</div>
+            <{/foreach}>
+            </td>
+          <!-- 中央-左ブロック部分終わり -->
+
+
+          <!-- 中央-右ブロック部分の定義 -->
+			<td id="centerRcolumn">
+              <{foreach item=block from=$xoops_crblocks}>
+				<div style="padding: 0px 5px 0px 0px;">
+				<div class="blockTitle"><{$block.title}></div>
+				<div class="blockContent"><{$block.content}></div>
+				</div>
+              <{/foreach}>
+            </td>
+          <!-- 中央-右ブロック部分終わり -->
+          </tr>
+        </table>
+
+        <{/if}>
+        <!-- End display center blocks -->
+
+        <div id="content">
+          <{$xoops_contents}>
+        </div>
+      </td>
+
+      <{if $xoops_showrblock == 1}>
+
+      <!-- 右ブロック部分の定義 -->
+      <td id="rightcolumn">
+        <{foreach item=block from=$xoops_rblocks}>
+			<div class="blockTitle"><{$block.title}></div>
+			<div class="blockContent"><{$block.content}></div>
+        <{/foreach}>
+      </td>
+      <!-- 右ブロック部分終わり -->
+
+      <{/if}>
+
+    </tr>
+</table>
+
+<!-- フッタ部分の定義 -->
+<table cellspacing="0" width=780 style="width:780px;">
+    <tr>
+    <td id="footerbar">
+	<a href="http://www.oceannet.jp/" target="_blank">
+	<img src="<{$xoops_imageurl}>poweredby.gif" alt="" /></a>
+	</td>
+    </tr>
+</table>
+<!-- フッタ部分終わり -->
+
+</div>
+</body>
+</html>
